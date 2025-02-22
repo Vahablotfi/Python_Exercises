@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
 """
-Created on Fri Jan 24 11:39:16 2025
-@author: Vahab
-
 --- 1: Working with Variables in Python ---
 
 Variables in Python serve as a way to label and store values for later use. For example, to define a variable named x and assign it the value 10, you can use the = symbol like this:
