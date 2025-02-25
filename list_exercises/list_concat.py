@@ -15,3 +15,22 @@ Instructions:
   - Add the result to sum.
 4. Return sum as the final result.
 """
+
+def dotProduct(listA, listB):
+  """
+    listA: a list of numbers
+    listB: a list of numbers of the same length as listA
+    Returns: the sum of the pairwise products of listA and listB
+  """
+  sum = 0
+  
+  for i in range(len(listA)):
+    sum+= listA[i] * listB[i]
+    
+  return sum
+
+listA=[1,2,3]
+listB=[4,5,6]
+print(dotProduct(listA, listB))
+  
+  
