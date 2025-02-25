@@ -36,8 +36,34 @@ print(flatten(['hello', ['world', ['!']]]))
 
 def flatten(aList):
   """
-    aList: a list
-    Returns a copy of aList, which is a flattened version of aList
+
+    Flatten a nested list into a single-level list.
+
+    Args:
+        aList (list): A potentially nested list of elements.
+
+    Returns:
+        list: A flattened version of aList.
+
+    Examples:
+        >>> flatten([[1, 'a', ['cat'], 2], [[[3]], 'dog'], 4, 5])
+        [1, 'a', 'cat', 2, 3, 'dog', 4, 5]
+
+        >>> flatten([1, [2, [3, [4, 5]]]])
+        [1, 2, 3, 4, 5]
+
+        >>> flatten(['hello', ['world', ['!']]])
+        ['hello', 'world', '!']
+
+        >>> flatten([])
+        []
+
+        >>> flatten([42])
+        [42]
+
+        >>> flatten([['nested', ['lists'], ['are', ['fun']]]])
+        ['nested', 'lists', 'are', 'fun']
+  
   """
   
   new_list = []
