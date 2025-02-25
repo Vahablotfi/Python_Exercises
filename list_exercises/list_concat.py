@@ -17,10 +17,34 @@ Instructions:
 """
 
 def dotProduct(listA, listB):
-  """
-    listA: a list of numbers
-    listB: a list of numbers of the same length as listA
-    Returns: the sum of the pairwise products of listA and listB
+  """    
+        Calculates the dot product of two lists.
+
+    Args:
+        listA (list): A list of numbers.
+        listB (list): A list of numbers of the same length as listA.
+
+    Returns:
+        int or float: The sum of the pairwise products of listA and listB.
+
+    Examples:
+        >>> dotProduct([1, 2, 3], [4, 5, 6])
+        32
+
+        >>> dotProduct([0, 0, 0], [1, 2, 3])
+        0
+
+        >>> dotProduct([1, -2, 3], [-4, 5, -6])
+        -32
+
+        >>> dotProduct([1.5, 2.5], [3.0, 4.0])
+        13.0
+
+        >>> dotProduct([], [])
+        0
+
+        >>> dotProduct([1], [2])
+        2
   """
   sum = 0
   
