@@ -1,11 +1,17 @@
 """
 Flattening a Nested List
 Explanation:
-Imagine you have a list containing elements that are not only integers and strings but also other lists. Your goal is to convert this nested list into a flat list where all elements appear in a single-level list without changing their order. This process is called flattening a list.
+Imagine you have a list containing elements that are not only integers and strings but also other lists. 
+Your goal is to convert this nested list into a flat list where all elements appear in a single-level list 
+without changing their order. This process is called flattening a list.
 
-For example, a nested list like [[1, 'a', ['cat'], 2], [[[3]], 'dog'], 4, 5] should be flattened into [1, 'a', 'cat', 2, 3, 'dog', 4, 5].
+For example, a nested list like [[1, 'a', ['cat'], 2], [[[3]], 'dog'], 4, 5] 
+should be flattened into [1, 'a', 'cat', 2, 3, 'dog', 4, 5].
 
-The key challenge is that the nesting can be deep and unpredictable—you don’t know how many layers of lists there might be. Recursion is a powerful tool to handle this. Each time you encounter a sublist, you recursively flatten it until all elements are in a single-level list.
+The key challenge is that the nesting can be deep and unpredictable—you 
+don’t know how many layers of lists there might be. Recursion is a powerful 
+tool to handle this. Each time you encounter a sublist, you recursively flatten it until all 
+elements are in a single-level list.
 
 Instructions:
 1. Define the function flatten(aList) that takes a nested list as input and returns a flattened version.
@@ -26,3 +32,48 @@ print(flatten([1, [2, [3, [4, 5]]]]))
 print(flatten(['hello', ['world', ['!']]]))  
 # Output: ['hello', 'world', '!']
 """
+
+
+def flatten(aList):
+  """
+
+    Flatten a nested list into a single-level list.
+
+    Args:
+        aList (list): A potentially nested list of elements.
+
+    Returns:
+        list: A flattened version of aList.
+
+    Examples:
+        >>> flatten([[1, 'a', ['cat'], 2], [[[3]], 'dog'], 4, 5])
+        [1, 'a', 'cat', 2, 3, 'dog', 4, 5]
+
+        >>> flatten([1, [2, [3, [4, 5]]]])
+        [1, 2, 3, 4, 5]
+
+        >>> flatten(['hello', ['world', ['!']]])
+        ['hello', 'world', '!']
+
+        >>> flatten([])
+        []
+
+        >>> flatten([42])
+        [42]
+
+        >>> flatten([['nested', ['lists'], ['are', ['fun']]]])
+        ['nested', 'lists', 'are', 'fun']
+  
+  """
+  
+  new_list = []
+  for item in aList:
+    if type(item) != list:  # noqa: E721
+      new_list.append(item)
+    else:
+      new_list.extend(flatten(item))
+  
+  return new_list
+
+print(flatten([[1, 'a', ['cat'], 2], [[[3]], 'dog'], 4, 5]))
+  
