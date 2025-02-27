@@ -18,5 +18,21 @@ def polysum(n, s):
     
     Returns:
     float: The sum rounded to 4 decimal places
+    
+        Examples:
+    >>> polysum(3, 2)
+    15.5885
+    >>> polysum(4, 5)
+    141.1765
     """
+    # Calculate area
+    area = (0.25 * n * s ** 2) / math.tan(math.pi / n)
+    
+    # Calculate perimeter
+    perimeter = n * s
+    
+    # Sum of area and square of perimeter
+    result = area + perimeter ** 2
+    
+    return round(result, 4)
 
