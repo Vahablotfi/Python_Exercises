@@ -56,7 +56,40 @@ def score(word, f):
    >>> score("a", add)  # Only one letter -> 0
    0
    """
+# Define a dictionary to map letters to their position in the alphabet
+   alphabet_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 
+                  'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 
+                  't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26}
 
+   letter_values=[]
+
+# Compute letter scores
+   for i in range(len(word)):
+      value = 0
+      value = alphabet_dict[word[i].lower()] * i
+      letter_values.append(value)
+      
+   # Sort in descending order   
+   letter_values.sort(reverse=True)
+
+   
+
+# Apply the function `f` to the two highest scores (if there are at least two letters)
+   result = 0
+   if len(letter_values) >=2:
+      result = f(letter_values[0], letter_values[1])
+   # Edge case: empty string (not expected per problem statement)
+   elif len(letter_values) == 1:
+      result = letter_values[0]
+
+   return result
+
+
+def helper_function(a, b):
+   return a+b
+
+
+print(score("adD", helper_function))
 
 
 
