@@ -12,15 +12,26 @@ Your task:
 
 def sqrt(x, eps=0.0001):
     """Returns the approximate square root of x."""
-    low, high = 0, x
-    guess = (low + high) / 2
-    while abs(guess**2 - x) > eps:
-        if guess**2 < x:
-            low = guess
-        else:
-            high = guess
+    try:
+        if x < 0:
+            raise ValueError("Cannot compute square root of a negative number.")
+        
+        if x == 0:
+            return 0
+        
+        low, high = 0, x
+        
         guess = (low + high) / 2
-    return guess
+        
+        while abs(guess**2 - x) > eps:
+            if guess**2 < x:
+                low = guess
+            else:
+                high = guess
+            guess = (low + high) / 2
+        return guess
+    except ValueError as e:
+        return str(e)
 
 # Test Cases
 print(sqrt(25))  # Expected: ~5.0
