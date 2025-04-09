@@ -9,3 +9,24 @@ Instructions:
 3. Check if the word is the same when reversed.
 4. Print "It's a palindrome!" if true, otherwise print "Not a palindrome."
 """
+
+def isPalindrome(aString):
+    '''
+    aString: a string
+    '''
+    
+    helper_var = ''
+    for char in range(len(aString)-1, -1, -1):
+        helper_var += aString[char]
+        
+    
+    for char in range(len(aString)-1 ):
+        if aString[char].lower() != helper_var[char].lower():
+            return False
+    return True
+
+print (isPalindrome("raceCar"))
+print (isPalindrome("madam"))
+print(isPalindrome("dadash"))
+
+        
