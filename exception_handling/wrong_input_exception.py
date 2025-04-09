@@ -13,3 +13,19 @@ Your task:
 2. Modify the function to **handle exceptions gracefully**.
 3. Ensure the program **keeps asking for valid input** if an error occurs.
 """
+
+def divide_numbers():
+    try:
+        num1 = input("Enter first number: ")
+        num2 = input("Enter second number: ")
+        result = int(num1) / int(num2)
+        print("Result:", result)
+    except ValueError:
+        print("wrong input try again, input must be integer!")
+        divide_numbers()
+    except ZeroDivisionError:
+        print("You  can not divide by zero, try again!")
+        divide_numbers()
+    
+
+divide_numbers()
