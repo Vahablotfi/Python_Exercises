@@ -12,3 +12,14 @@ Instructions:
 3. Inside this loop, use another for loop for numbers 1 to 10.
 4. Print each multiplication result, then increment counters properly.
 """
+
+def multiplication_table_for():
+    for num in range(1, 10):  
+        print(f"\nMultiplication Table for {num}")
+        for i in range(1, 11):  
+            print(f"{num} x {i} = {num * i}")
+
+
+multiplication_table_for()
+
+
