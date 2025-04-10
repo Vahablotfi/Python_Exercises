@@ -11,3 +11,19 @@ Instructions:
 3. Inside this loop, use another while loop for numbers 1 to 10.
 4. Print each multiplication result, then increment counters properly.
 """
+
+
+def multiplication_table_while():
+    num = 1
+    while num <= 9:
+        print(f"\nMultiplication Table for {num}")
+        i = 1
+        while i <= 10:
+            print(f"{num} x {i} = {num * i}")
+            i += 1
+        num += 1
+
+
+multiplication_table_while()
+
+
