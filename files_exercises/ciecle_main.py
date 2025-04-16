@@ -6,9 +6,7 @@
 
 from circle_utils import calculate_area
 
-# file = open("circle_area.txt", "w")
-# file.write("Some text here")
-# file.close()  # <- manual close
+
 
 radius = 5
 area = calculate_area(radius)
