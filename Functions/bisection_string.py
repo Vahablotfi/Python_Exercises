@@ -21,3 +21,30 @@ print(find_threshold_bisection("134789", "5"))  # Output: 7
 print(find_threshold_bisection("2345679", "3"))  # Output: 3  
 print(find_threshold_bisection("2345679", "8"))  # Output: -1  
 """
+
+
+
+def find_threshold_bisection(sorted_nums, threshold):
+    low = 0
+    high = len(sorted_nums) - 1
+    result = -1
+    
+    while low <= high:
+        mid = (low + high) // 2
+        mid_val = sorted_nums[mid]
+        
+        if int(mid_val) >= int(threshold):
+            result = int(mid_val)
+            high = mid - 1  
+        else:
+            low = mid + 1
+        
+    return result
+
+
+
+print(find_threshold_bisection("134789", "5"))  
+print(find_threshold_bisection("2345679", "3"))  
+print(find_threshold_bisection("2345679", "8"))  
+print(find_threshold_bisection("134789", "2"))   
+print(find_threshold_bisection("134789", "8"))   
