@@ -14,8 +14,27 @@ If the number is not a single-digit number, find a way to reduce it to a smaller
 Combine the result of the smaller problem with the current number to build the solution step by step.
 Test your function with different numbers and observe how the function works for large values.
 
- Test Cases:
+Test Cases:
 print(count_digits_recursive(5))        # Output: 1
 print(count_digits_recursive(12345))    # Output: 5
 print(count_digits_recursive(1000000))  # Output: 7
 """
+
+
+def count_digits_recursive(n):
+    # handle unexpected negative input gracefully
+    n = abs(n)
+
+    
+    if n < 10:
+        return 1
+
+    return 1 + count_digits_recursive(n // 10)
+
+
+# Tests
+print(count_digits_recursive(5))        # 1
+print(count_digits_recursive(12345))    # 5
+print(count_digits_recursive(1000000))  # 7
+print(count_digits_recursive(0))        # 1 
+print(count_digits_recursive(-42))      # 2 
